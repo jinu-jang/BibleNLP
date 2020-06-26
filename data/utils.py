@@ -39,7 +39,7 @@ def load_book(book, folder='./new_testament/'):
         filename = f"{book:02}_{index_to_book[book]}.csv"
     elif book in index_to_book.values():
         book_to_index = dict(zip(index_to_book.values(), index_to_book.keys()))
-        filename = f"{book_to_index[book]:2}_{book}.csv"
+        filename = f"{book_to_index[book]:02}_{book}.csv"
     else:
         raise ValueError("Unexpected book. Please enter 1~27 or correct name of book")
     return pd.read_csv(folder + filename, delimiter="|")
